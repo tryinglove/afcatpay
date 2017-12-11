@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.dao.DUserDao">
+    <insert id="addUser" parameterType="com.cn.vo.DUser">
+        INSERT INTO d_user VALUES (#{userId},#{userName},#{userRemark});
+    </insert>
+    <delete id="deleteUser">
+        DELETE from d_user  where user_id = #{userId}
+    </delete>
+    <select id="getAllUser" resultType="com.cn.vo.DUser">
+        select * from d_user
+    </select>
+    <update id="updateUser" parameterType="com.cn.vo.DUser">
+        UPDATE d_user t set  t.user_name = #{userName}, t.user_remark = #{userRemark} where t.user_id = #{userId}
+    </update>
+    <select id="getUserById" resultType="com.cn.vo.DUser">
+        SELECT * from d_user t where t.user_id = #{userId}
+    </select>
+</mapper>

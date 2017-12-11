@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--  服务提供方-->
+    <dubbo:application name="Demo-provider"/>
+    <!-- 在注册中心注册-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!-- 在指定端口暴露服务-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 声明需要暴露的服务接口-->
+    <dubbo:service interface="com.cn.service.DUserService" ref="userService"/>
+
+
+</beans>
