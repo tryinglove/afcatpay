@@ -17,12 +17,4 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-<!--    <servlet>
-        <servlet-name>testServlet</servlet-name>
-        <servlet-class>com.cn.webdemo.test.testServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>testServlet</servlet-name>
-        <url-pattern>Test.servlet</url-pattern>
-    </servlet-mapping>-->
 </web-app>

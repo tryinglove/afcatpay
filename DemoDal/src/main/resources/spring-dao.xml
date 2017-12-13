@@ -13,8 +13,12 @@
     <!-- 为了单元测试-->
     <!--<context:component-scan base-package="com.cn.dao"/>-->
     <!-- 1.配置数据库相关参数properties的属性：${url} -->
-    <context:property-placeholder location="classpath:jdbc.properties" />
-
+    <!--<context:property-placeholder location="classpath:jdbc.properties" />-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:jdbc.properties</value>
+        </property>
+    </bean>
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
         <property name="driverClassName" value="${jdbc.driver}" />

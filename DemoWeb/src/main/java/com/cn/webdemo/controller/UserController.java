@@ -44,7 +44,7 @@ public class UserController extends BaseController {
 
     @RequestMapping("/update")
     public String updateUser(DUser user){
-        System.out.println(user.getUserId()+"------------------------------------");
+
         userService.updateUser(user);
 
         return "redirect:/user/show";
