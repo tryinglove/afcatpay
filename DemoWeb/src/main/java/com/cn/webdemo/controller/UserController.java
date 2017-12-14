@@ -1,8 +1,10 @@
 package com.cn.webdemo.controller;
 
-import com.cn.service.DUserService;
-import com.cn.vo.DUser;
+
+import com.cn.common.service.DUserService;
+import com.cn.common.vo.DUser;
 import com.cn.webdemo.common.BaseController;
+import com.cn.webdemo.common.NoSessionController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("user")
-public class UserController extends BaseController {
+public class UserController extends NoSessionController {
 
     @Resource(name = "userService")
     DUserService userService;
