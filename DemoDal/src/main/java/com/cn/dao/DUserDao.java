@@ -1,6 +1,7 @@
 package com.cn.dao;
 
-import com.cn.vo.DUser;
+
+import com.cn.common.vo.DUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

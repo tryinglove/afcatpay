@@ -11,7 +11,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>DemoDal</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.cn</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

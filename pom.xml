@@ -12,8 +12,8 @@
         <module>Demoserver</module>
         <module>DemoWeb</module>
         <module>DemoDal</module>
-        <module>DemoServiceName</module>
         <module>Demomq</module>
+        <module>common</module>
 
     </modules>
     <dependencies>

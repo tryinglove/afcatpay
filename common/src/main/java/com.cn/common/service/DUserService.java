@@ -1,6 +1,6 @@
-package com.cn.service;
+package com.cn.common.service;
 
-import com.cn.vo.DUser;
+import com.cn.common.vo.DUser;
 
 import java.util.List;
 
