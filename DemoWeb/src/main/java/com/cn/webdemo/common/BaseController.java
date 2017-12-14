@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 public abstract class BaseController {
 
-
     protected HttpServletRequest request;
     protected HttpServletResponse response;
     protected HttpSession session;

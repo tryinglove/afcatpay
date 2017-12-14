@@ -3,7 +3,6 @@ package com.cn.webdemo.controller;
 
 import com.cn.common.service.DUserService;
 import com.cn.common.vo.DUser;
-import com.cn.webdemo.common.BaseController;
 import com.cn.webdemo.common.NoSessionController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
