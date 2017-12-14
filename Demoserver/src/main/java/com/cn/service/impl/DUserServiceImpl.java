@@ -1,9 +1,9 @@
 package com.cn.service.impl;
 
+import com.cn.common.service.DUserService;
+import com.cn.common.vo.DUser;
 import com.cn.dao.DUserDao;
 import com.cn.jedis.JedisTemplate;
-import com.cn.service.DUserService;
-import com.cn.vo.DUser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.codehaus.jackson.map.ObjectMapper;
