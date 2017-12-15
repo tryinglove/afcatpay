@@ -14,6 +14,7 @@
         <module>DemoDal</module>
         <module>Demomq</module>
         <module>common</module>
+        <module>DemoSercurity</module>
 
     </modules>
     <dependencies>

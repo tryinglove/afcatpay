@@ -15,6 +15,7 @@ public class ServiceLogAop implements MethodInterceptor{
     final static Log logger = LogFactory.getLog(ServiceLogAop.class);
     ObjectMapper jsonMapper = new ObjectMapper();
     public Object invoke(MethodInvocation invocation) throws Throwable {
+
         String serviceName = invocation.getThis().getClass().getSimpleName();
         StringBuffer sb = new StringBuffer();
         sb.append("开始执行:");

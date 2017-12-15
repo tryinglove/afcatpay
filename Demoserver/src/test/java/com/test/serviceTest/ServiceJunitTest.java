@@ -1,7 +1,8 @@
 package com.test.serviceTest;
 
-import com.cn.service.DUserService;
-import com.cn.vo.DUser;
+
+import com.cn.common.service.DUserService;
+import com.cn.common.vo.DUser;
 import com.test.SpringServiceJunitTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,7 @@ public class ServiceJunitTest extends SpringServiceJunitTest{
     }
     @Test
     public void queryUser(){
-        DUser user = userService.queryById(55523);
+        DUser user = userService.queryById(2233223);
 
         System.out.println(user.getUserName());
     }

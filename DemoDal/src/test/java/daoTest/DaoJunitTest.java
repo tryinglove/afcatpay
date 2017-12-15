@@ -1,7 +1,7 @@
 package daoTest;
 
+import com.cn.common.vo.DUser;
 import com.cn.dao.DUserDao;
-import com.cn.vo.DUser;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

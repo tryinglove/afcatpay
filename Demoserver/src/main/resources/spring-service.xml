@@ -13,6 +13,6 @@
     <bean id="serviceLogAop" class="com.cn.common.aop.ServiceLogAop"/>
 
     <aop:config>
-        <aop:advisor advice-ref="serviceLogAop" id="serverLog" pointcut="execution(* com.cn.service.*.*(..))"/>
+        <aop:advisor id="serverLog"  advice-ref="serviceLogAop" pointcut="execution(* com.cn..*Impl.*(..))"/>
     </aop:config>
 </beans>
