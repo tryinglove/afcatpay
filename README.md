@@ -5,7 +5,7 @@
 ####Demomq
     mq
 ####DemoSercurity
-    用户登录，用户权限
+    用户登录，用户权限，可以单独拿出来做
 ####Demoserver
     服务端，提供业务服务
 ####DemoWeb
