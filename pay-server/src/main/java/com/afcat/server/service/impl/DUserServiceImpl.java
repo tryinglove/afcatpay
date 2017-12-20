@@ -1,9 +1,9 @@
 package com.afcat.server.service.impl;
 
-import com.afcat.server.jedis.JedisTemplate;
 import com.afcat.common.service.DUserService;
 import com.afcat.common.vo.DUser;
 import com.afcat.dal.dao.DUserDao;
+import com.afcat.server.jedis.JedisTemplate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-
 import java.util.List;
 
 /**

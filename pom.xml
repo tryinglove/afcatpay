@@ -4,17 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cn</groupId>
-    <artifactId>distributedDemo</artifactId>
+    <groupId>com.afcat</groupId>
+    <artifactId>afcatpay</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Demoserver</module>
-        <module>DemoWeb</module>
-        <module>DemoDal</module>
-        <module>Demomq</module>
-        <module>common</module>
-        <module>DemoSercurity</module>
+        <module>pay-dal</module>
+        <module>pay-mq</module>
+        <module>pay-sercuity</module>
+        <module>pay-server</module>
+        <module>pay-share</module>
+        <module>pay-web</module>
 
     </modules>
     <dependencies>
