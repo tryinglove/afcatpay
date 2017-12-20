@@ -1,12 +1,12 @@
-####common
+####pay-share
     公共方法：aop exception servieName vo
-####DemoDal
+####pay-Dal
     数据库访问
-####Demomq
+####pay-mq
     mq
-####DemoSercurity
+####pay-sercurity
     用户登录，用户权限，可以单独拿出来做
-####Demoserver
+####pay-server
     服务端，提供业务服务
-####DemoWeb
+####pay-web
     web
