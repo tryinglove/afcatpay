@@ -24,7 +24,7 @@
         <constructor-arg index="1" value="127.0.0.1" type="java.lang.String"/>
         <constructor-arg index="2" value="6379" type="int"/>
     </bean>
-    <bean id="jedisTemplate" class="com.cn.jedis.JedisTemplate">
+    <bean id="jedisTemplate" class="com.afcat.server.jedis.JedisTemplate">
         <constructor-arg index="0" ref="jedisPool" />
     </bean>
 </beans>

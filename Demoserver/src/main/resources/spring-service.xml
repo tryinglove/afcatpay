@@ -8,11 +8,11 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 扫描service包下所有使用注解的类型 -->
-    <context:component-scan base-package="com.cn" />
+    <context:component-scan base-package="com.afcat.server.service" />
     <!-- 使用aop打印日志-->
-    <bean id="serviceLogAop" class="com.cn.common.aop.ServiceLogAop"/>
+    <bean id="serviceLogAop" class="com.afcat.common.aop.ServiceLogAop"/>
 
     <aop:config>
-        <aop:advisor id="serverLog"  advice-ref="serviceLogAop" pointcut="execution(* com.cn..*Impl.*(..))"/>
+        <aop:advisor id="serverLog"  advice-ref="serviceLogAop" pointcut="execution(* com.afcat.server..*Impl.*(..))"/>
     </aop:config>
 </beans>
