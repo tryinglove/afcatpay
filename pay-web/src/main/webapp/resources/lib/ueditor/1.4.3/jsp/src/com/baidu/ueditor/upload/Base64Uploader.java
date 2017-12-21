@@ -5,10 +5,9 @@ import com.baidu.ueditor.define.AppInfo;
 import com.baidu.ueditor.define.BaseState;
 import com.baidu.ueditor.define.FileType;
 import com.baidu.ueditor.define.State;
+import org.apache.commons.codec.binary.Base64;
 
 import java.util.Map;
-
-import org.apache.commons.codec.binary.Base64;
 
 public final class Base64Uploader {
 
