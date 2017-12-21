@@ -7,7 +7,7 @@ use merchant;
 
 -- 1.用户表 IM_USER
 create table `IM_USER` (
-  id_user varchar(10) primary key comment '用户登录的id编号,整张数据表的主键',
+  id_user varchar(32) primary key comment '用户登录的id编号,整张数据表的主键',
   user_name varchar(64) not null comment '登录系统的用户名',
   user_phone varchar(30) comment '用户的电话',
   user_email varchar(128) comment '用户的email邮箱地址',
@@ -25,7 +25,7 @@ create table `IM_USER` (
 
 -- 2.菜单表 IM_ITEM
 create table `IM_ITEM` (
-  id_item varchar(8) primary key comment '菜单功能表的主键列',
+  id_item varchar(32) primary key comment '菜单功能表的主键列',
   item_name varchar(60) not null comment '功能名称',
   item_url varchar(8) not null comment '菜单功能指向的url地址列表',
   item_auth char(1) not null comment '是否需要进行授权 0否，1是',
@@ -35,7 +35,7 @@ create table `IM_ITEM` (
 
 -- 3.角色表 IM_ROLE
 create table `IM_ROLE` (
-  id_role varchar(20) primary key comment '角色编号',
+  id_role varchar(32) primary key comment '角色编号',
   role_name varchar(100) not null comment '角色名称',
   role_desc varchar(300) comment '角色描述',
   role_level varchar(3) comment '角色级别',
@@ -48,20 +48,20 @@ create table `IM_ROLE` (
 
 -- 4.用户与角色对应关系之间的关联表 IM_USER_ROLE_REL
 create table `IM_USER_ROLE_REL` (
-  rel_userid varchar(20) not null primary key comment '用户编号',
-  rel_roleid varchar(20) not null comment '角色编号'
+  rel_userid varchar(32) not null primary key comment '用户编号',
+  rel_roleid varchar(32) not null comment '角色编号'
 )ENGINE=InnoDB default charset=utf8 comment '用户角色之间的关联表';
 
 -- 5.角色与功能对应关系表 IM_ROLE_ITEM_REL
 create table `IM_ROLE_ITEM_REL` (
-  id_role_item varchar(20) primary key comment '主键id',
-  role_item_roleid varchar(20) not null comment '角色编号',
-  role_item_itemid varchar(10) not null comment '功能编号'
+  id_role_item varchar(32) primary key comment '主键id',
+  role_item_roleid varchar(32) not null comment '角色编号',
+  role_item_itemid varchar(32) not null comment '功能编号'
 )ENGINE=InnoDB default charset=utf8 comment '角色与功能对应关系表';
 
 -- 6.菜单表 IM_MENU
 create table `IM_MENU` (
-  id_menu varchar(8) primary key comment '菜单编号',
+  id_menu varchar(32) primary key comment '菜单编号',
   menu_name varchar(60) not null comment '菜单名称',
   menu_desc varchar(300) comment '菜单描述',
   menu_parentid varchar(8) comment '上级菜单编号',
@@ -72,7 +72,7 @@ create table `IM_MENU` (
 
 -- 7.菜单功能关联表 IM_MENU_ITEM_REL
 create table `IM_MENU_ITEM_REL` (
-  id_menu_item varchar(20) primary key comment '记录id编号',
-  menu_item_menuid varchar(8) not null comment '菜单编号',
-  menu_item_itemid varchar(8) not null comment '功能名称'
+  id_menu_item varchar(32) primary key comment '记录id编号',
+  menu_item_menuid varchar(32) not null comment '菜单编号',
+  menu_item_itemid varchar(32) not null comment '功能名称'
 )ENGINE=InnoDB default charset=utf8 comment '菜单功能关联表';
