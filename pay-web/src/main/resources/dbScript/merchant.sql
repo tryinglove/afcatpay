@@ -76,3 +76,14 @@ create table `IM_MENU_ITEM_REL` (
   menu_item_menuid varchar(32) not null comment '菜单编号',
   menu_item_itemid varchar(32) not null comment '功能名称'
 )ENGINE=InnoDB default charset=utf8 comment '菜单功能关联表';
+
+create table `PAY_LOG` (
+  log_id varchar (32) primary key comment '日志id',
+  log_ip VARCHAR (50)  comment '请求ip',
+  log_mac VARCHAR (50) comment '请求mac',
+  log_success VARCHAR (2) comment '请求是否成功',
+  log_class VARCHAR (50) comment '记录日志的位置',
+  log_msg VARCHAR (100) comment '备注信息',
+  log_errorcode VARCHAR (20) comment '错误码',
+  log_time VARCHAR (30) comment '记录日志时间'
+ )ENGINE=InnoDB default charset=utf8 comment '日志表';

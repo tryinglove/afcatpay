@@ -26,4 +26,14 @@ public class DateUtil {
 
         return formatter.format(date);
     }
+
+    public static String getNowTime(){
+        String timeFormat = DEFAULT_TIME_FORMAT;
+
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat(timeFormat);
+
+        return formatter.format(date);
+    }
 }
