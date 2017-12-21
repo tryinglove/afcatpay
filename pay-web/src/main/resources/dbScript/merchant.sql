@@ -84,5 +84,6 @@ create table `PAY_LOG` (
   log_success VARCHAR (2) comment '请求是否成功',
   log_class VARCHAR (50) comment '记录日志的位置',
   log_msg VARCHAR (100) comment '备注信息',
-  log_errorcode VARCHAR (20) comment '错误码'
+  log_errorcode VARCHAR (20) comment '错误码',
+  log_time VARCHAR (30) comment '记录日志时间'
  )ENGINE=InnoDB default charset=utf8 comment '日志表';
