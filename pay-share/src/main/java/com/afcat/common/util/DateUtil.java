@@ -14,7 +14,7 @@ public class DateUtil {
      * 获取格式化的服务器时间
      * @param format
      *          日期模板：yyyyMMddHHmmss,yyyyMMdd...etc
-     * @return String
+     * @return String 生成的时间
      */
 
     public static String getNowTime(String format){
