@@ -1,4 +1,3 @@
-
 -- 创建名为merchant的数据库.
 create database if not exists `merchant`;
 

@@ -21,7 +21,7 @@ public class LogUtil {
     private static LogUtil logUtil;
 
     @PostConstruct
-    public void init() {
+    private void init() {
         logUtil = this;
     }
 
@@ -38,8 +38,6 @@ public class LogUtil {
         }catch (Exception e){
             //捕获异常,不阻断业务
         }
-
-
     }
 
     public static void writeUnSuccessLog(String ip,String mac,String clazz,String msg,String errorCode){
