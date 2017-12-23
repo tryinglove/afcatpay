@@ -8,7 +8,7 @@ import java.util.UUID;
  */
 public class IDUtil {
     /**
-     * 获取生成的时间
+     * 获取生成的UUID
      */
     public static String  getId(){
         String uuid = UUID.randomUUID().toString();
