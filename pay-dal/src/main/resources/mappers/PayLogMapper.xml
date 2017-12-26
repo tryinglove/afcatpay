@@ -6,4 +6,8 @@
     <insert id="writeLog" parameterType="com.afcat.common.vo.PayLog">
        INSERT INTO pay_log VALUES (#{logId},#{logIp},#{logMac},#{logSuccess},#{logClass},#{logMsg},#{logErrorcode},#{logTime});
     </insert>
+
+    <select id="queryErrorLog" resultType="com.afcat.common.vo.PayLog">
+      SELECT * from pay_log where log_success = '1';
+    </select>
 </mapper>

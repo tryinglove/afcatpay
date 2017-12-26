@@ -8,6 +8,7 @@ public class PayLog {
     private String logId;
     private String logIp;
     private String logMac;
+    //0：成功，1：失败
     private String logSuccess;
     private String logClass;
     private String logMsg;
