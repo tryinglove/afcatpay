@@ -15,7 +15,8 @@
         <module>pay-server</module>
         <module>pay-share</module>
         <module>pay-web</module>
-
+        <module>pay-test</module>
+        <module>pay-deploy</module>
     </modules>
     <dependencies>
         <!-- spring-->
@@ -169,8 +170,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- mq-->
-
 
     </dependencies>
 
