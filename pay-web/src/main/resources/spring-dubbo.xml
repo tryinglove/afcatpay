@@ -7,7 +7,7 @@
 	http://code.alibabatech.com/schema/dubbo
 	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 消费者-->
-    <dubbo:application name="Demo-web"/>
+    <dubbo:application name="pay-web"/>
     <!-- 在注册中心发现服务-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!-- 生成远程服务代理，类似webService生成客户端-->
