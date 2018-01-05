@@ -39,14 +39,14 @@
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-2"><i class="Hui-iconfont">&#xe60e;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
+                    <div class="formControls col-xs-8">
+                        <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
+                    </div>
                 </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-2"><i class="Hui-iconfont">&#xe6cb;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="code" name="code" class="input-text size-L" type="text" placeholder="验证码">
+                <div class="row cl">
+                    <label class="form-label col-xs-2"><i class="Hui-iconfont">&#xe6cb;</i></label>
+                    <div class="formControls col-xs-8">
+                        <input id="code" name="code" class="input-text size-L" type="text" placeholder="验证码">
 
                 </div>
             </div>
