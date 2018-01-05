@@ -63,7 +63,7 @@ public class LoginController extends NoSessionController {
     public String register(ImUser imUser,ModelMap modelMap){
 
         imUserService.add(imUser);
-        modelMap.addAttribute("account",imUser.getUser_acc());
+        modelMap.addAttribute("account",imUser.getUserAcc());
         return login(modelMap);
     }
 
@@ -75,13 +75,13 @@ public class LoginController extends NoSessionController {
 
         if(FLAG || session_code.equals(code)){
             ImUser imUser = imUserService.login(account,password);
-            if(imUser==null){
+            if(imUser!=null){
+                session.setAttribute("session_user" , imUser);
+                return home();
+            }else{
                 modelMap.addAttribute("message" , "用户名和密码不匹配!");
                 modelMap.addAttribute("account" , account);
                 return login(modelMap);
-            }else{
-                session.setAttribute("session_user" , imUser);
-                return home();
             }
         }else{
             modelMap.addAttribute("message" , "您输入的验证吗不正确,请重新输入!");
@@ -93,7 +93,7 @@ public class LoginController extends NoSessionController {
     @GetMapping("/logout")
     public String logout(ModelMap modelMap){
         ImUser imUser = (ImUser)session.getAttribute("session_user");
-        modelMap.addAttribute("account" , imUser.getUser_acc());
+        modelMap.addAttribute("account" , imUser.getUserAcc());
         session.invalidate();
         return login(modelMap);
     }

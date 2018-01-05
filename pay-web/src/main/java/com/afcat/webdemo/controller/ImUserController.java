@@ -77,7 +77,7 @@ public class ImUserController extends BaseController {
         this.imUserService.update(imUser);
 
         ImUser newImUser = (ImUser)this.session.getAttribute("session_imUser");
-        newImUser.setUser_pwd(imUser.getUser_pwd());
+        newImUser.setUserPwd(imUser.getUserPwd());
         session.setAttribute("session_imUser" , newImUser);
 
         return "success";
@@ -91,7 +91,7 @@ public class ImUserController extends BaseController {
     @PostMapping(URL_USER_ADD)
     @ResponseBody
     public String add(ImUser imUser){
-        imUser.setId_user(IDUtil.getId());
+        imUser.setIdUser(IDUtil.getId());
         this.imUserService.add(imUser);
         return "success";
     }

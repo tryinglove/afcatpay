@@ -47,6 +47,7 @@ public class ImUserServiceImpl implements ImUserService {
 
     public ImUser login(String account,String password) {
         return imImUserDao.login(account,password);
+
     }
 
     public List<ImUser> validateAccount(String account) {
@@ -54,7 +55,7 @@ public class ImUserServiceImpl implements ImUserService {
     }
 
     public int update(ImUser imUser) {
-        if(null != imImUserDao.load(imUser.getId_user())){
+        if(null != imImUserDao.load(imUser.getIdUser())){
             return imImUserDao.update(imUser);
         }else{
             return 0;

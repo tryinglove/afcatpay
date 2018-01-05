@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.design.framework.im_user.dao.Im_userDao" >
+
+    <select id="load" resultType="com.afcat.common.vo.ImUser" parameterType="java.lang.String" >
+        select
+        *
+        from im_user
+        where id_user = #{id_user,jdbcType=VARCHAR}
+    </select>
+    <delete id="delete" parameterType="java.lang.String" >
+        delete from im_user
+        where id_user = #{id_user,jdbcType=VARCHAR}
+    </delete>
+    <insert id="add" parameterType="com.afcat.common.vo.ImUser" >
+        insert into im_user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id_user != null" >
+                id_user,
+            </if>
+            <if test="user_name != null" >
+                user_name,
+            </if>
+            <if test="user_acc != null" >
+                user_acc,
+            </if>
+            <if test="user_phone != null" >
+                user_phone,
+            </if>
+            <if test="user_email != null" >
+                user_email,
+            </if>
+            <if test="user_certype != null" >
+                user_certype,
+            </if>
+            <if test="user_certno != null" >
+                user_certno,
+            </if>
+            <if test="user_pwd != null" >
+                user_pwd,
+            </if>
+            <if test="user_initpwd != null" >
+                user_initpwd,
+            </if>
+            <if test="user_stt != null" >
+                user_stt,
+            </if>
+            <if test="user_desc != null" >
+                user_desc,
+            </if>
+            <if test="user_remark1 != null" >
+                user_remark1,
+            </if>
+            <if test="user_remark2 != null" >
+                user_remark2,
+            </if>
+            <if test="user_remark3 != null" >
+                user_remark3,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id_user != null" >
+                #{id_user,jdbcType=VARCHAR},
+            </if>
+            <if test="user_name != null" >
+                #{user_name,jdbcType=VARCHAR},
+            </if>
+            <if test="user_acc != null" >
+                #{user_acc,jdbcType=VARCHAR},
+            </if>
+            <if test="user_phone != null" >
+                #{user_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="user_email != null" >
+                #{user_email,jdbcType=VARCHAR},
+            </if>
+            <if test="user_certype != null" >
+                #{user_certype,jdbcType=VARCHAR},
+            </if>
+            <if test="user_certno != null" >
+                #{user_certno,jdbcType=VARCHAR},
+            </if>
+            <if test="user_pwd != null" >
+                #{user_pwd,jdbcType=VARCHAR},
+            </if>
+            <if test="user_initpwd != null" >
+                #{user_initpwd,jdbcType=CHAR},
+            </if>
+            <if test="user_stt != null" >
+                #{user_stt,jdbcType=CHAR},
+            </if>
+            <if test="user_desc != null" >
+                #{user_desc,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark1 != null" >
+                #{user_remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark2 != null" >
+                #{user_remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark3 != null" >
+                #{user_remark3,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.afcat.common.vo.ImUser" >
+        update im_user
+        <set >
+            <if test="user_name != null" >
+                user_name = #{user_name,jdbcType=VARCHAR},
+            </if>
+            <if test="user_acc != null" >
+                user_acc = #{user_acc,jdbcType=VARCHAR},
+            </if>
+            <if test="user_phone != null" >
+                user_phone = #{user_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="user_email != null" >
+                user_email = #{user_email,jdbcType=VARCHAR},
+            </if>
+            <if test="user_certype != null" >
+                user_certype = #{user_certype,jdbcType=VARCHAR},
+            </if>
+            <if test="user_certno != null" >
+                user_certno = #{user_certno,jdbcType=VARCHAR},
+            </if>
+            <if test="user_pwd != null" >
+                user_pwd = #{user_pwd,jdbcType=VARCHAR},
+            </if>
+            <if test="user_initpwd != null" >
+                user_initpwd = #{user_initpwd,jdbcType=CHAR},
+            </if>
+            <if test="user_stt != null" >
+                user_stt = #{user_stt,jdbcType=CHAR},
+            </if>
+            <if test="user_desc != null" >
+                user_desc = #{user_desc,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark1 != null" >
+                user_remark1 = #{user_remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark2 != null" >
+                user_remark2 = #{user_remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="user_remark3 != null" >
+                user_remark3 = #{user_remark3,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id_user = #{id_user,jdbcType=VARCHAR}
+    </update>
+
+    <select id="login" resultType="com.afcat.common.vo.ImUser">
+        select * from im_user t  where t.user_acc = #{account} and t.user_pwd = #{password}
+    </select>
+    <select id="list" resultType="com.afcat.common.vo.ImUser">
+        select * from im_user
+    </select>
+    <select id="validateAccount" resultType="com.afcat.common.vo.ImUser">
+        SELECT * from im_user  where user_acc = #{account}
+    </select>
+</mapper>
