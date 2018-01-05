@@ -1,5 +1,7 @@
 package com.afcat.server.dubbo;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
@@ -9,12 +11,13 @@ import java.io.IOException;
  *
  */
 public class Main {
+    private static Log logger = LogFactory.getLog(Main.class);
     public static void main(String[] args) throws IOException {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"classpath*:spring-dao.xml",
-                "classpath:spring-service.xml","classpath:spring-redis-config.xml","classpath:spring-dubbo.xml"});
-        System.out.println("加载配置文件成功");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+         "classpath*:spring-dao.xml","classpath:spring-service.xml","classpath:spring-redis-config.xml","classpath:spring-dubbo.xml");
+        logger.info("加载配置文件成功");
         context.start();
-        System.out.println("启动dubbo服务");
+        logger.info("启动dubbo服务");
         System.in.read();
     }
 }

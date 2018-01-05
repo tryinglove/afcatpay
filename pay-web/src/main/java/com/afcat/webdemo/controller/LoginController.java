@@ -28,10 +28,10 @@ import java.util.Random;
 public class LoginController extends NoSessionController {
     private final static boolean FLAG = false;
     @Resource(name = "userService")
-    UserService userService;
+    private UserService userService;
 
     @GetMapping("/login")
-    public String login(ModelMap modelMap){
+    public String login(){
 
         return "login";
     }
@@ -64,7 +64,7 @@ public class LoginController extends NoSessionController {
 
         userService.addUser(user);
         modelMap.addAttribute("account",user.getAccount());
-        return login(modelMap);
+        return login();
     }
 
 
@@ -78,7 +78,7 @@ public class LoginController extends NoSessionController {
             if(user==null){
                 modelMap.addAttribute("message" , "用户名和密码不匹配!");
                 modelMap.addAttribute("account" , account);
-                return login(modelMap);
+                return login();
             }else{
                 session.setAttribute("session_user" , user);
                 return home();
@@ -86,7 +86,7 @@ public class LoginController extends NoSessionController {
         }else{
             modelMap.addAttribute("message" , "您输入的验证吗不正确,请重新输入!");
             modelMap.addAttribute("account" , account);
-            return login(modelMap);
+            return login();
         }
     }
 
@@ -95,7 +95,7 @@ public class LoginController extends NoSessionController {
         User user = (User)session.getAttribute("session_user");
         modelMap.addAttribute("account" , user.getAccount());
         session.invalidate();
-        return login(modelMap);
+        return login();
     }
 
 
