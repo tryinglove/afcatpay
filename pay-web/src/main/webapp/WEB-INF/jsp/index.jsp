@@ -1,35 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <base href="<%=basePath%>">
-    <meta charset="UTF-8">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="Bookmark" href="resources/favicon.ico" >
-    <link rel="Shortcut Icon" href="resources/favicon.ico" />
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="resources/lib/html5.js"></script>
-    <script type="text/javascript" src="resources/lib/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="resources/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="resources/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="resources/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="resources/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="resources/static/h-ui.admin/css/style.css" />
-    <!--[if IE 6]>
-    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
-    <script>DD_belatedPNG.fix('*');</script>
-    <![endif]-->
-    <!--/meta 作为公共模版分离出去-->
-
-    <title>H-ui.admin v3.0</title>
+    <%@ include file = "common.jsp" %>
 </head>
 <body>
 <!--_header 作为公共模版分离出去-->
@@ -82,10 +55,10 @@
 
     <div class="menu_dropdown bk_2">
         <dl id="menu-article">
-            <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe616;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a  target="rightFrame" href="article-list.html" title="资讯管理">资讯管理</a></li>
+                    <li><a target="rightFrame" href="imUser/list">用户列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -173,12 +146,6 @@
 <section class="Hui-article-box">
     <iframe id="rightFrame" name="rightFrame" scrolling="no" frameborder="0" src="sys/content" width="100%" height="100%"></iframe>
 </section>
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="resources/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="resources/static/h-ui/js/H-ui.js"></script>
-<script type="text/javascript" src="resources/static/h-ui.admin/js/H-ui.admin.page.js"></script>
-<!--/_footer /作为公共模版分离出去-->
 
 </body>
 </html>

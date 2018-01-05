@@ -1,8 +1,8 @@
 package com.afcat.webdemo.controller;
 
 
-import com.afcat.common.service.UserService;
-import com.afcat.common.vo.User;
+import com.afcat.common.service.ImUserService;
+import com.afcat.common.vo.ImUser;
 import com.afcat.webdemo.common.NoSessionController;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
@@ -27,8 +27,8 @@ import java.util.Random;
 @RequestMapping("sys")
 public class LoginController extends NoSessionController {
     private final static boolean FLAG = false;
-    @Resource(name = "userService")
-    UserService userService;
+    @Resource(name = "imUserService")
+    ImUserService imUserService;
 
     @GetMapping("/login")
     public String login(ModelMap modelMap){
@@ -53,35 +53,35 @@ public class LoginController extends NoSessionController {
     public Map<String,Object> validateAccount(String account){
         Map<String , Object> map = new HashMap<String , Object>();
 
-        List<User> list = userService.validateAccount(account);
+        List<ImUser> list = imUserService.validateAccount(account);
 
         map.put("haveOne",list.isEmpty());
         return map;
     }
 
     @RequestMapping("/register")
-    public String register(User user,ModelMap modelMap){
+    public String register(ImUser imUser,ModelMap modelMap){
 
-        userService.addUser(user);
-        modelMap.addAttribute("account",user.getAccount());
+        imUserService.add(imUser);
+        modelMap.addAttribute("account",imUser.getUserAcc());
         return login(modelMap);
     }
 
 
 
     @PostMapping("/login")
-    public String login(User user,String code,ModelMap modelMap){
+    public String login(String account,String password,String code,ModelMap modelMap){
         String session_code = this.session.getAttribute("validateCode").toString();
-        String account = user.getAccount();
+
         if(FLAG || session_code.equals(code)){
-            user = userService.login(user);
-            if(user==null){
+            ImUser imUser = imUserService.login(account,password);
+            if(imUser!=null){
+                session.setAttribute("session_user" , imUser);
+                return home();
+            }else{
                 modelMap.addAttribute("message" , "用户名和密码不匹配!");
                 modelMap.addAttribute("account" , account);
                 return login(modelMap);
-            }else{
-                session.setAttribute("session_user" , user);
-                return home();
             }
         }else{
             modelMap.addAttribute("message" , "您输入的验证吗不正确,请重新输入!");
@@ -92,8 +92,8 @@ public class LoginController extends NoSessionController {
 
     @GetMapping("/logout")
     public String logout(ModelMap modelMap){
-        User user = (User)session.getAttribute("session_user");
-        modelMap.addAttribute("account" , user.getAccount());
+        ImUser imUser = (ImUser)session.getAttribute("session_user");
+        modelMap.addAttribute("account" , imUser.getUserAcc());
         session.invalidate();
         return login(modelMap);
     }
