@@ -11,6 +11,7 @@ import java.util.Properties;
 /**
  * Created by xn.L on 2018/7/4.
  */
+
 public class SendMail {
 
     public  String  sendMailToClient() throws MessagingException {
