@@ -15,5 +15,9 @@ public class SystemErrorCode extends BaseErrorCode {
      * 权限系统数据库通信异常
      */
     private static final String SSER00002 = "SSER00002";
+    /**
+     * 解析参数错误
+     */
+    private static final String SBAS00001 = "SBAS00001";
 }
 

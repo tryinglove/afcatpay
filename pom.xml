@@ -17,6 +17,7 @@
         <module>pay-web</module>
         <module>pay-test</module>
         <module>pay-deploy</module>
+        <module>pay-mailserver</module>
     </modules>
     <dependencies>
         <!-- spring-->
